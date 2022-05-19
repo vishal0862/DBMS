@@ -1,0 +1,33 @@
+create table salesman1(Salesman_id number(6), Name varchar(30), City VARCHAR(10), Commission number(5,3))
+insert into Salesman1 values(5001,'James Hog','New York',0.15)
+insert into Salesman1 values(5002,'Nail Knite','Paris',0.13)
+insert into Salesman1 values(5005,'Pit Alex','London',0.11)
+insert into Salesman1 values(5006,'Mc Lyon','Paris',0.14)
+insert into Salesman1 values(5007,'Paul Adam','Rome',0.13)
+insert into Salesman1 values(5003,'Lauson Hen','San Jose',0.12)
+SELECT * FROM Salesman1
+truncate TABLE Salesman1
+drop TABLE Salesman1
+
+
+create table Customer(Customer_id number(6), Cust_Name varchar(30), City VARCHAR(15), Grade number(5),Salesman_id number(5))
+insert into Customer values(3002,'Nick Rimando','New York',100,5001);
+insert into Customer values(5002,'Brad Davis','New York',200,5001);
+insert into Customer values(5005,'Graham Zusi','california',200,5002);
+insert into Customer values(5006,'Julian Green','London',300,5002);
+insert into Customer values(5007,'Fabian Johnson','Paris',300,5006);
+insert into Customer values(5003,'Geoff cameron','Berlin',100,5003);
+insert into Customer values(5003,'Jozy Altidor','Moscow',200,5007);
+select * from Customer
+
+
+
+create table orders(Ord_no number(6), Purch_amt number(10,5), Ord_date date, Customer_id number(5),Salesman_id number(5))
+insert into orders values(70001,150.5,'05-oct-2012',3005,5002);
+insert into orders values(70009,270.65,'10-sep-2012',3001,5005);
+insert into orders values(5005,'Graham Zusi','california',200,5002);
+insert into orders values(5006,'Julian Green','London',300,5002);
+insert into orders values(5007,'Fabian Johnson','Paris',300,5006);
+insert into orders values(5003,'Geoff cameron','Berlin',100,5003);   
+insert into orders values(5003,'Jozy Altidor','Moscow',200,5007);
+SELECT * from orders
