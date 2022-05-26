@@ -1,0 +1,51 @@
+
+create table salesman1(Salesman_id number(6), Name varchar(30), City VARCHAR(10), Commission number(5,3))
+insert into Salesman1 values(5001,'James Hog','New York',0.15);
+insert into Salesman1 values(5002,'Nail Knite','Paris',0.13);
+insert into Salesman1 values(5005,'Pit Alex','London',0.11);
+insert into Salesman1 values(5006,'Mc Lyon','Paris',0.14);
+insert into Salesman1 values(5007,'Paul Adam','Rome',0.13);
+insert into Salesman1 values(5003,'Lauson Hen','San Jose',0.12)
+SELECT * FROM Salesman1
+truncate TABLE Salesman1
+drop TABLE Salesman1
+
+
+create table Customer(Customer_id number(6), Cust_Name varchar(30), City VARCHAR(15), Grade number(5),Salesman_id number(5))
+insert into Customer values(3002,'Nick Rimando','New York',100,5001);
+insert into Customer values(5002,'Brad Davis','New York',200,5001);
+insert into Customer values(5005,'Graham Zusi','california',200,5002);
+insert into Customer values(5006,'Julian Green','London',300,5002);
+insert into Customer values(5007,'Fabian Johnson','Paris',300,5006);
+insert into Customer values(5003,'Geoff cameron','Berlin',100,5003);
+insert into Customer values(5003,'Jozy Altidor','Moscow',200,5007);
+select * from Customer
+
+
+
+create table orders(Ord_no number(6), Purch_amt number(10,5), Ord_date date, Customer_id number(5),Salesman_id number(5))
+insert into orders values(70001,150.5,'05-oct-2012',3005,5002);
+insert into orders values(70009,270.65,'10-sep-2012',3001,5005);
+insert into orders values(7002,65.26,'05-oct-2012',3002,5001);
+insert into orders values(5006,110.5,'07-aug-2012',3009,5003);
+insert into orders values(5007,948.5,'10-sep-2012',3005,5002);
+insert into orders values(5003,2400.6,'27-july-2012',3007,5002);   
+insert into orders values(5003,47.56,'10-sep-2012',3002,5001);
+insert into orders values(5003,45.6,'10-oct-2012',3009,5003);
+insert into orders values(70012,250.45,'27-jun-2012',3008,5002);
+insert into orders values(70011,75.29,'17-aug-2012',3003,5007);
+insert into orders values(70013,3045.6,'25-apr-2012',3002,5001);
+
+SELECT * from orders
+
+truncate table orders
+drop table orders
+
+SELECT salesman1.Name AS "person",Customer.Cust_Name,customer.City FROM salesman1,Customer WHERE salesman1.City=Customer.City
+
+select orders.Ord_no,orders.Purch_amt,Customer.Cust_Name,Customer.City, from orders,Customer
+WHERE Customer.Customer_id=orders.Customer_id AND orders.purch_amt BETWEEN 500 AND 2000
+
+
+
+SELECT a.Ord_no,a.Purch_amt,b.Cust_name,b.City from Orders a, Customer b where a.Customer_id=b.Customer_id AND a.Purch_amt BETWEEN 500 and 2000
