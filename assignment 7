@@ -1,0 +1,20 @@
+CREATE table employee111
+(empid VARCHAR2(3) CHECK (empid like 'E%') primary key , 
+ename VARCHAR(25) not NULL, 
+dob DATE not NULL, 
+doj date not NULL ,
+ salary number(7)not null CHECK(salary>0),
+ constraint ck0 check (doj>dob)
+
+);
+select * from employee111
+insert into employee111 values('E1','vishal chaturvedi', '18-oct-2000','18-oct-2022',4500000);
+insert into employee111 values('E2','vishal chaturvedi', '18-oct-2000','18-oct-2022',4546000);
+insert into employee111 values('E3','vishal chaturvedi', '18-oct-2000','18-oct-2022',4508800);
+insert into employee111 values('E4','vishal chaturvedi', '18-oct-2000','18-oct-2022',4509900);
+insert into employee111 values('E5','vishal chaturvedi', '18-oct-2000','18-oct-2022',4504500);
+insert into employee111 values('E6','vishal chaturvedi', '18-oct-2000','18-oct-2022',4500550);
+insert into employee111 values('E7','vishal chaturvedi', '18-oct-2000','18-oct-2022',4500780);
+
+select * from employee111 WHERE dob>'18-oct-2001'
+SELECT * from employee111 TO_CHAR(doj; 'MM/DD/YY') check(doj>'22-feb-1991') 
