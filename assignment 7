@@ -16,4 +16,4 @@ insert into employee111 values('E5','vishal chaturvedi', '18-oct-2000','18-oct-2
 insert into employee111 values('E6','vishal chaturvedi', '18-oct-2000','18-oct-2022',4500550);
 insert into employee111 values('E7','vishal chaturvedi', '18-oct-2000','18-oct-2022',4500780);
 
-select * from employee111 WHERE dob>'18-oct-2001'
+select * from employee111 WHERE dob>'18-oct-2002'
