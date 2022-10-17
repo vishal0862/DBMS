@@ -7,7 +7,6 @@ insert into Salesman1 values(5006,'Mc Lyon','Paris',0.14);
 insert into Salesman1 values(5007,'Paul Adam','Rome',0.13);
 insert into Salesman1 values(5003,'Lauson Hen','San Jose',0.12)
 SELECT * FROM Salesman1
-truncate TABLE Salesman1
 
 
 create table Customer(Customer_id number(6), Cust_Name varchar(30), City VARCHAR(15), Grade number(5),Salesman_id number(5))
